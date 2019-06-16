@@ -1,29 +1,29 @@
-function isPalindrome(word, prase) {
-  return word.includes(prase)
+function isPalindrome(sentence, phrase) {
+  return sentence.includes(phrase)
 }
 
-let reverseString = (word) => {
+let reverseString = (sentence) => {
     let newString = '';
-    for(let i = word.length; i > 0; i--) {
-        newString += word[i-1]
+    for(let i = sentence.length; i > 0; i--) {
+        newString += sentence[i-1]
     }
     return newString;
 }
 
-function countPalindromesInString(word,prase) {
+function countPalindromesInString(sentence,phrase) {
     let subStrings = [];
-    let length = word.length - prase.length;
+    let length = sentence.length - phrase.length;
     for(let i = 0; i < length+1; i++) {
-        let subString = word.substring(i,i + prase.length);
-        if(isPalindrome(subString,prase)) {
+        let subString = sentence.substring(i,i + phrase.length);
+        if(isPalindrome(subString,phrase)) {
             subStrings.push(subString);
           }
     }
-    let reverse = reverseString(word)
+    let reverse = reverseString(sentence)
     for(let i = 0; i < length + 1; i++) {
         
-        let subString = reverse.substring(i,i + prase.length);
-        if(isPalindrome(subString,prase)) {
+        let subString = reverse.substring(i,i + phrase.length);
+        if(isPalindrome(subString,phrase)) {
             subStrings.push(subString);
           }
     }
@@ -31,8 +31,7 @@ function countPalindromesInString(word,prase) {
   return subStrings.length;
 }
 
+const sentence = 'banananana'
+const phrase = 'nana'
 
-const word = 'banananana'
-const prase = 'nana'
-
-console.log(countPalindromesInString(word,prase));
+console.log(countPalindromesInString(sentence,phrase));

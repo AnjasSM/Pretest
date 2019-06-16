@@ -21,7 +21,6 @@ let max = (arr) => {
 }
 
 let sort = (arr) => {
-    //[6,22,34,15,2,13,26,57,42,32]
     for(let i = 0; i < arr.length-1; i++) {
         for(let j = i+1; j < arr.length; j++) {
             if(arr[i] > arr[j]) {
